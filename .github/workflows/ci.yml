@@ -7,7 +7,12 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    env:
+      APP_ENV: staging
     steps:
+      - name: Show environment
+        run: echo "Running in $APP_ENV mode"
+        
       - name: Checkout code
         uses: actions/checkout@v4
 
