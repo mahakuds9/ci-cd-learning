@@ -24,5 +24,4 @@ jobs:
       - name: Run test
         run: pytest
 
-      - name: Build docker image
-        run: docker build -t myapp:${{ github.run_number }} .
+
