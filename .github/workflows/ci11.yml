@@ -27,3 +27,10 @@ jobs:
 
       - name: Build docker image
         run: docker build -t myapp:${{ github.run_number }} .
+
+  deploy-staging:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulate deploy to staging
+        run: echo "Deploying myapp:${{ github.run_number }} to STAGING environment"
